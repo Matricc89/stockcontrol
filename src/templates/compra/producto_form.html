@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Agregar Producto</h1>
+    
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="id_nombre" class="form-label">Nombre</label>
+            {{ form.nombre }}
+        </div>
+        <div class="mb-3">
+            <label for="id_precio" class="form-label">Precio</label>
+            {{ form.precio }}
+        </div>
+        <div class="mb-3">
+            <label for="id_stock_actual" class="form-label">Stock Actual</label>
+            {{ form.stock_actual }}
+        </div>
+        <div class="mb-3">
+            <label for="id_proveedor" class="form-label">Proveedor</label>
+            {{ form.proveedor }}
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>
+{% endblock %}
